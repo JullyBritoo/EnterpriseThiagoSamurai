@@ -1,0 +1,18 @@
+package br.com.fiap.dao;
+
+public interface GenericDAO <Tabela, Chave>{
+	
+	void cadastrar(Tabela entidade);
+	
+	void atualizar(Tabela entidade);
+	
+	
+	//Nem sempre a chave primaria será int, então o excluir não precisa ser sempre int também. Pode ser String
+	void excluir(Chave id);
+	
+	//Pesquisa pelo objeto Tabela
+	Tabela pesquisar(Chave id);
+	
+	void commit() throws CommitException;
+	
+}

@@ -1,0 +1,11 @@
+package br.com.fiap.dao;
+
+public interface GenericDAO <Tabela>{
+	
+	void cadastrar(Tabela entidade);
+	
+	void atualizar(Tabela entidade);
+	
+	void excluir();
+	
+}

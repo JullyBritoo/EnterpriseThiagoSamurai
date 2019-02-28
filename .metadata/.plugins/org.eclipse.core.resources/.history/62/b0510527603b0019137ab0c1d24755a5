@@ -1,0 +1,18 @@
+package br.com.fiap.dao.impl;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.dao.GenericDAO;
+
+public class GenericDAOImpl <Tabela,Chave> implements GenericDAO<Tabela,Chave>{
+	
+	private EntityManager em;
+	
+	public GenericDAOImpl(EntityManager em) {
+		super();
+		this.em = em;
+	}
+	
+	
+
+}

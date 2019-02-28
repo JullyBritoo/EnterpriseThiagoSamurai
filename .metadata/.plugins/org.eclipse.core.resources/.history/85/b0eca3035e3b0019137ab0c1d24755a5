@@ -1,0 +1,13 @@
+package br.com.fiap.dao;
+
+public interface GenericDAO <Tabela>{
+	
+	void cadastrar(Tabela entidade);
+	
+	void atualizar(Tabela entidade);
+	
+	
+	//Nem sempre a chave primaria será int, então o excluir não precisa ser sempre int também
+	void excluir();
+	
+}

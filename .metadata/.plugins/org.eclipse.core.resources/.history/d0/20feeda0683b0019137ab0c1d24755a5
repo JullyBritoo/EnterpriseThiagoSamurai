@@ -1,0 +1,7 @@
+package br.com.fiap.dao.impl;
+
+import br.com.fiap.dao.CursoDAO;
+
+public class CursoDAOImpl implements CursoDAO{
+	
+}

@@ -1,0 +1,14 @@
+package br.com.fiap.entity;
+
+/**
+ * T_CURSO(SQ_T_CURSO)
+ *		*cd_curso(NUMBER) (PK)
+ * 		*nm_curso(VARCHAR(15))
+ * 		*dt-lancamento(DATE)
+ * 		ds_categoria(VARCHAR)(Enum: TECNICO, BACHAREL, POS)
+ *
+ */
+
+public class Curso {
+	
+}

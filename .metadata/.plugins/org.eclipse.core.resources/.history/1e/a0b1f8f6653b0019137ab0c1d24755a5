@@ -1,0 +1,27 @@
+package br.com.fiap.entity;
+
+import java.util.Calendar;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+/**
+ * T_CURSO(SQ_T_CURSO)
+ *		*cd_curso(NUMBER) (PK)
+ * 		*nm_curso(VARCHAR(15))
+ * 		*dt-lancamento(DATE)
+ * 		ds_categoria(VARCHAR)(Enum: TECNICO, BACHAREL, POS)
+ */
+
+public class Curso {
+	
+	@Id
+	@Column(name="cd_curso")
+	private int codigo;
+	
+	private String nome;
+	
+	private Calendar dataLancamento;
+	
+	private Categoria descricao;
+}

@@ -1,0 +1,40 @@
+package br.com.fiap.dao.impl;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.dao.GenericDAO;
+import br.com.fiap.exception.CodigoInexistenteException;
+import br.com.fiap.exception.CommitException;
+
+public class GenericDAOImpl <Tabela,Chave> implements GenericDAO<Tabela, Chave>{
+	
+	private EntityManager em;
+	
+	public GenericDAOImpl(EntityManager em) {
+		this.em = em;
+	}
+	
+	public void cadastrar(Tabela entidade) {
+		em.persist(entidade);
+	}
+	
+	public void atualizar(Tabela entidade) {
+		em.merge(entidade);
+	}
+	
+	public void excluir(Chave id)throws CodigoInexistenteException{
+		em.remove(id);
+	}
+	
+	public void commit() throws CommitException{
+		try {
+			em.getTransaction().begin();
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			em.getTransaction().rollback();
+			throw new CommitException();
+		}
+	}
+
+}
